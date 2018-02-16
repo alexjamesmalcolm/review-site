@@ -2,12 +2,14 @@ package com.alexjamesmalcolm.reviewsite;
 
 public class Review {
 
+	private long id;
+
 	public Review(long id) {
-		// TODO Auto-generated constructor stub
+		this.id = id;
 	}
 
 	public long getId() {
-		return 345456;
+		return id;
 	}
 
 	public String getTitle() {

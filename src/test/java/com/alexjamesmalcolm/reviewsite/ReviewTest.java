@@ -23,6 +23,14 @@ public class ReviewTest {
 		assertThat(actual, is(title));
 	}
 	
+	@Test
+	public void shouldHaveId2() {
+		long id = 2;
+		Review underTest = new Review(id);
+		long actual = underTest.getId();
+		assertThat(actual, is(id));
+	}
+	
 	public void shouldHaveImageUrl() {}
 	
 	public void shouldHaveReviewCategory() {}
