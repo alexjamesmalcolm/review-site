@@ -3,9 +3,11 @@ package com.alexjamesmalcolm.reviewsite;
 public class Review {
 
 	private long id;
+	private String title;
 
-	public Review(long id) {
+	public Review(long id, String title) {
 		this.id = id;
+		this.title = title;
 	}
 
 	public long getId() {
@@ -13,7 +15,11 @@ public class Review {
 	}
 
 	public String getTitle() {
-		return "Review: Black Panther";
+		return title;
+	}
+
+	public String getUrl() {
+		return null;
 	}
 
 }
