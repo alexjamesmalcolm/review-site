@@ -1,6 +1,9 @@
 package com.alexjamesmalcolm.reviewsite;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 public class Review {
 
@@ -11,8 +14,10 @@ public class Review {
 	private String content;
 	private String description;
 	private Date date;
+	private List<String> tags;
 
-	public Review(long id, String title, String url, String category, String content, String description, Date date) {
+	public Review(long id, String title, String url, String category, String content, String description, Date date,
+			String... tags) {
 		this.id = id;
 		this.title = title;
 		this.url = url;
@@ -20,6 +25,8 @@ public class Review {
 		this.content = content;
 		this.description = description;
 		this.date = date;
+		this.tags = new ArrayList<String>(tags.length);
+		this.tags.addAll(Arrays.asList(tags));
 	}
 
 	public long getId() {
@@ -48,6 +55,10 @@ public class Review {
 
 	public Date getDate() {
 		return date;
+	}
+
+	public List<String> getTags() {
+		return tags;
 	}
 
 }

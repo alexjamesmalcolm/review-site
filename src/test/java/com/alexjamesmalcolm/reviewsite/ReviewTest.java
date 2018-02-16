@@ -3,7 +3,9 @@ package com.alexjamesmalcolm.reviewsite;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -120,5 +122,16 @@ public class ReviewTest {
 		Review underTest = new Review(1, "", "", "", "", "", date);
 		Date actual = underTest.getDate();
 		assertThat(actual, is(date));
+	}
+
+	@Test
+	public void shouldHaveTags() {
+		List<String> tags = new ArrayList<>();
+		tags.add("movie");
+		tags.add("sick");
+		tags.add("superhero");
+		Review underTest = new Review(1, "", "", "", "", "", new Date(0), "movie", "sick", "superhero");
+		List<String> actual = underTest.getTags();
+		assertThat(actual, is(tags));
 	}
 }
