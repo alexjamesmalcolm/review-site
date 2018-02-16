@@ -7,7 +7,7 @@ public class Review {
 	private String url;
 	private String category;
 
-	public Review(long id, String title, String url, String category) {
+	public Review(long id, String title, String url, String category, String content) {
 		this.id = id;
 		this.title = title;
 		this.url = url;
@@ -28,6 +28,10 @@ public class Review {
 
 	public String getCategory() {
 		return category;
+	}
+
+	public String getContent() {
+		return "Hello world";
 	}
 
 }
