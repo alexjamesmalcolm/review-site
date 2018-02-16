@@ -80,6 +80,14 @@ public class ReviewTest {
 		assertThat(actual, is(content));
 	}
 
+	@Test
+	public void shouldHaveContentReview() {
+		String content = "review";
+		Review underTest = new Review(1, "", "", "", content);
+		String actual = underTest.getContent();
+		assertThat(actual, is(content));
+	}
+
 	public void shouldHaveDescription() {
 	}
 
