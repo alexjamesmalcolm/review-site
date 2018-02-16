@@ -1,23 +1,29 @@
 package com.alexjamesmalcolm.reviewsite;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class ReviewRepository {
 
-	private Collection<Review> reviews;
+	private Map<Long, Review> reviews;
 
 	public ReviewRepository(Review... reviews) {
-		this.reviews = new ArrayList<Review>(reviews.length);
-		this.reviews.addAll(Arrays.asList(reviews));
+		this.reviews = new HashMap<>(reviews.length);
+		for(Review review : reviews) {
+			this.reviews.put(review.getId(), review);
+		}
 	}
 
 	public Collection<Review> findAll() {
-		return reviews;
+		return reviews.values();
+	}
+
+	public Review find(Long reviewId) {
+		return reviews.get(reviewId);
 	}
 
 }

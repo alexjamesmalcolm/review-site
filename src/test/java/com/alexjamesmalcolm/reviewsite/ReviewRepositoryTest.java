@@ -1,5 +1,7 @@
 package com.alexjamesmalcolm.reviewsite;
 
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
 
 import java.util.Collection;
@@ -15,11 +17,11 @@ public class ReviewRepositoryTest {
 
 	private ReviewRepository underTest;
 
-	private long firstReviewId;
+	private long firstReviewId = 1L;
 	@Mock
 	private Review firstReview;
 
-	private long secondReviewId;
+	private long secondReviewId = 2L;
 	@Mock
 	private Review secondReview;
 
@@ -38,5 +40,12 @@ public class ReviewRepositoryTest {
 		Collection<Review> result = underTest.findAll();
 		
 		Assert.assertThat(result, Matchers.containsInAnyOrder(firstReview, secondReview));
+	}
+	
+	@Test
+	public void shouldFindOne() {
+		underTest = new ReviewRepository(firstReview, secondReview);
+		Review result = underTest.find(firstReviewId);
+		assertThat(result, is(firstReview));
 	}
 }
