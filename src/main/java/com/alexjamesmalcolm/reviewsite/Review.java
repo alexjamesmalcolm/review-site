@@ -10,6 +10,7 @@ public class Review {
 	private String category;
 	private String content;
 	private String description;
+	private Date date;
 
 	public Review(long id, String title, String url, String category, String content, String description, Date date) {
 		this.id = id;
@@ -18,6 +19,7 @@ public class Review {
 		this.category = category;
 		this.content = content;
 		this.description = description;
+		this.date = date;
 	}
 
 	public long getId() {
@@ -45,7 +47,7 @@ public class Review {
 	}
 
 	public Date getDate() {
-		return new Date(1);
+		return date;
 	}
 
 }

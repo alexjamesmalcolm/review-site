@@ -113,4 +113,12 @@ public class ReviewTest {
 		Date actual = underTest.getDate();
 		assertThat(actual, is(date));
 	}
+
+	@Test
+	public void shouldHaveDate2() {
+		Date date = new Date(2);
+		Review underTest = new Review(1, "", "", "", "", "", date);
+		Date actual = underTest.getDate();
+		assertThat(actual, is(date));
+	}
 }
