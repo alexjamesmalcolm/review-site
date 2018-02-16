@@ -96,6 +96,14 @@ public class ReviewTest {
 		assertThat(actual, is(description));
 	}
 
+	@Test
+	public void shouldHaveDescription2() {
+		String description = "2";
+		Review underTest = new Review(1, "", "", "", "", description);
+		String actual = underTest.getDescription();
+		assertThat(actual, is(description));
+	}
+
 	public void shouldHaveDate() {
 	}
 }

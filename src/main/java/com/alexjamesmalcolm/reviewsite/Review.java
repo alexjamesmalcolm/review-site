@@ -7,6 +7,7 @@ public class Review {
 	private String url;
 	private String category;
 	private String content;
+	private String description;
 
 	public Review(long id, String title, String url, String category, String content, String description) {
 		this.id = id;
@@ -14,6 +15,7 @@ public class Review {
 		this.url = url;
 		this.category = category;
 		this.content = content;
+		this.description = description;
 	}
 
 	public long getId() {
@@ -37,7 +39,7 @@ public class Review {
 	}
 
 	public String getDescription() {
-		return "Good review of good movie";
+		return description;
 	}
 
 }
