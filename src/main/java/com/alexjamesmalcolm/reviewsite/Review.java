@@ -19,7 +19,8 @@ public class Review {
 	}
 
 	public String getUrl() {
-		return null;
+		String url = "http://cdn.history.com/sites/2/2018/02/MCDBLPA_EC092-1-E.jpeg";
+		return url;
 	}
 
 }

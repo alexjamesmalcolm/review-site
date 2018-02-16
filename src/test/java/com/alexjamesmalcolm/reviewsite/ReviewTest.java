@@ -3,8 +3,6 @@ package com.alexjamesmalcolm.reviewsite;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
-import java.net.URL;
-
 import org.junit.Test;
 
 public class ReviewTest {
@@ -41,7 +39,7 @@ public class ReviewTest {
 		assertThat(actual, is(title));
 	}
 	
-	//@Test
+	@Test
 	public void shouldHaveImageUrl() {
 		String url = "http://cdn.history.com/sites/2/2018/02/MCDBLPA_EC092-1-E.jpeg";
 		Review underTest = new Review(1, "");
