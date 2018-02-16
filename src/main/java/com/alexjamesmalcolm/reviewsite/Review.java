@@ -10,4 +10,8 @@ public class Review {
 		return 345456;
 	}
 
+	public String getTitle() {
+		return "Review: Black Panther";
+	}
+
 }

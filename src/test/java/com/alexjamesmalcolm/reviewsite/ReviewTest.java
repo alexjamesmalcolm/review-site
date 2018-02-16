@@ -14,4 +14,22 @@ public class ReviewTest {
 		long actual = underTest.getId();
 		assertThat(actual, is(id));
 	}
+	
+	@Test
+	public void shouldHaveTitle() {
+		String title = "Review: Black Panther";
+		Review underTest = new Review(34);
+		String actual = underTest.getTitle();
+		assertThat(actual, is(title));
+	}
+	
+	public void shouldHaveImageUrl() {}
+	
+	public void shouldHaveReviewCategory() {}
+	
+	public void shouldHaveContent() {}
+	
+	public void shouldHaveDescription() {}
+	
+	public void shouldHaveDate() {}
 }
