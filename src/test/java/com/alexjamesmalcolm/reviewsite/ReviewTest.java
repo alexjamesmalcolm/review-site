@@ -64,6 +64,14 @@ public class ReviewTest {
 		assertThat(actual, is(category));
 	}
 
+	@Test
+	public void shouldHaveReviewCategoryMusic() {
+		String category = "music";
+		Review underTest = new Review(1, "", "", category);
+		String actual = underTest.getCategory();
+		assertThat(actual, is(category));
+	}
+
 	public void shouldHaveContent() {
 	}
 

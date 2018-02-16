@@ -5,11 +5,13 @@ public class Review {
 	private long id;
 	private String title;
 	private String url;
+	private String category;
 
 	public Review(long id, String title, String url, String category) {
 		this.id = id;
 		this.title = title;
 		this.url = url;
+		this.category = category;
 	}
 
 	public long getId() {
@@ -25,7 +27,7 @@ public class Review {
 	}
 
 	public String getCategory() {
-		return "movies";
+		return category;
 	}
 
 }
