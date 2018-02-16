@@ -4,10 +4,12 @@ public class Review {
 
 	private long id;
 	private String title;
+	private String url;
 
-	public Review(long id, String title) {
+	public Review(long id, String title, String url) {
 		this.id = id;
 		this.title = title;
+		this.url = url;
 	}
 
 	public long getId() {
@@ -19,7 +21,6 @@ public class Review {
 	}
 
 	public String getUrl() {
-		String url = "http://cdn.history.com/sites/2/2018/02/MCDBLPA_EC092-1-E.jpeg";
 		return url;
 	}
 
