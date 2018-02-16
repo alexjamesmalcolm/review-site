@@ -1,5 +1,7 @@
 package com.alexjamesmalcolm.reviewsite;
 
+import java.util.Date;
+
 public class Review {
 
 	private long id;
@@ -9,7 +11,7 @@ public class Review {
 	private String content;
 	private String description;
 
-	public Review(long id, String title, String url, String category, String content, String description) {
+	public Review(long id, String title, String url, String category, String content, String description, Date date) {
 		this.id = id;
 		this.title = title;
 		this.url = url;
@@ -40,6 +42,10 @@ public class Review {
 
 	public String getDescription() {
 		return description;
+	}
+
+	public Date getDate() {
+		return new Date(1);
 	}
 
 }
