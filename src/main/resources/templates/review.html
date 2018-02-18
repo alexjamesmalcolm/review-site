@@ -13,10 +13,19 @@
 		</nav>
 	</header>
 	<article>
-		
+		<img th:src="${review.getUrl()}" width="300px"/>
+		<p th:text="${review.date}"/>
+		<p>Category: <span th:text="${review.category}"/></p>
+		<p th:text="${review.content}"/>
+		<p>Tags:</p>
+		<ul th:each="tag: ${review.getTags()}">
+			<a th:href="'/search?tag=' + ${tag}">
+				<li th:text="${tag}"/>
+			</a>
+		</ul>
 	</article>
 	<footer>
-		
+		<a href="https://github.com/alexjamesmalcolm">Visit my github</a>
 	</footer>
 </body>
 </html>

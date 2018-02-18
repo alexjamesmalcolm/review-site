@@ -26,6 +26,15 @@ public class ReviewController {
 	public String review(@RequestParam(value = "id") Long id, Model model) {
 		Review review = reviewRepo.find(id);
 		model.addAttribute("review", review);
+		System.out.println(review.getUrl());
+		System.out.println(((Review) model.asMap().get("review")).getUrl());
 		return "review";
+	}
+	
+	@RequestMapping("/search")
+	public String review(@RequestParam(value = "tag") String tag, Model model) {
+		Collection<Review> reviews = reviewRepo.search(tag);
+		model.addAttribute("reviews", reviews);
+		return "reviews";
 	}
 }
