@@ -1,12 +1,14 @@
 package com.alexjamesmalcolm.reviewsite;
 
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
-import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -36,16 +38,31 @@ public class ReviewRepositoryTest {
 	@Test
 	public void shouldFindAllReviews() {
 		underTest = new ReviewRepository(firstReview, secondReview);
-		
+
 		Collection<Review> result = underTest.findAll();
-		
-		Assert.assertThat(result, Matchers.containsInAnyOrder(firstReview, secondReview));
+
+		Assert.assertThat(result, containsInAnyOrder(firstReview, secondReview));
 	}
-	
+
 	@Test
 	public void shouldFindOne() {
 		underTest = new ReviewRepository(firstReview, secondReview);
 		Review result = underTest.find(firstReviewId);
 		assertThat(result, is(firstReview));
+	}
+
+	@Test
+	public void shouldSearchByTag() {
+		List<String> tags1 = new ArrayList<>();
+		tags1.add("stuff");
+		tags1.add("good");
+		when(firstReview.getTags()).thenReturn(tags1);
+		List<String> tags2 = new ArrayList<>();
+		tags2.add("good");
+		tags2.add("movie");
+		when(secondReview.getTags()).thenReturn(tags2);
+		underTest = new ReviewRepository(firstReview, secondReview);
+		Collection<Review> result = underTest.search("stuff");
+		assertThat(result, containsInAnyOrder(firstReview));
 	}
 }
