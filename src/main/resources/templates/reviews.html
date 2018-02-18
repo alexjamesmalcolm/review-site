@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title></title>
+
+</head>
+<body>
+	<article th:each="review: ${reviews}">
+		<a th:href="'/review?id=' + ${review.getId()}" th:text="${review.getTitle()}" />
+	</article>
+</body>
+</html>
+<!-- long id, String title, String url, String category, String content, String description, Date date, List<String> tags -->
