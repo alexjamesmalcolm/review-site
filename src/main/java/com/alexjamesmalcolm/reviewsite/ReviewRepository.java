@@ -1,6 +1,7 @@
 package com.alexjamesmalcolm.reviewsite;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,9 +12,23 @@ public class ReviewRepository {
 
 	private Map<Long, Review> reviews;
 
+	public ReviewRepository() {
+		populateReviewsMap(
+				new Review(1L, "Black Panther", "image url", "movies", "content1", "description1", new Date(0),
+						"good movie"),
+				new Review(2L, "title2", "second url", "category2", "content2", "description2", new Date(10),
+						"good stuff"),
+				new Review(3L, "title3", "third url", "category3", "content3", "description3", new Date(30), "good",
+						"stuff"));
+	}
+
 	public ReviewRepository(Review... reviews) {
+		populateReviewsMap(reviews);
+	}
+
+	private void populateReviewsMap(Review... reviews) {
 		this.reviews = new HashMap<>(reviews.length);
-		for(Review review : reviews) {
+		for (Review review : reviews) {
 			this.reviews.put(review.getId(), review);
 		}
 	}
