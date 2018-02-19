@@ -16,6 +16,7 @@
 			<h2>
 				<a th:href="@{/review(id=${review.getId()})}" th:text="${review.getTitle()}" />
 			</h2>
+			<img class="icon" th:src="@{${review.getUrl()}}" />
 			<p th:text="${review.getDescription()}"/>
 		</article>
 		<footer>

@@ -13,8 +13,8 @@
 			</nav>
 		</header>
 		<article>
-			<img class = "poster" th:src="@{${review.url}}"/>
-			<p>Category: <span th:text="${review.category}"/></p>
+			<img class = "poster" th:src="@{${review.getUrl()}}"/>
+			<p>Category: <span th:text="${review.getCategory()}"/></p>
 			<p th:text="${review.content}"/>
 			<p>Tags: </p>
 			<a class="tag" th:each="tag: ${review.getTags()}" th:href="@{/search(tag=${tag})}">
