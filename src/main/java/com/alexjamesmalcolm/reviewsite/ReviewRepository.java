@@ -14,8 +14,8 @@ public class ReviewRepository {
 
 	public ReviewRepository() {
 		String contentOne = "Black Panther is probably the best marvel movie.";
-		String contentTwo = "This movie is so bad that its poster's description is actually about another movie.";
-		String contentThree = "This movie is all about the kids, which really, isn't that all that matters?";
+		String contentTwo = "This movie is so bad that its poster's description is actually about another movie. I once was able to convince my roommates to watch this movie cause I told them it got a 9 on rotten tomatoes, I never mentioned that it was 9/100.";
+		String contentThree = "This movie is all about the kids, which really, isn't that all that matters? Nah but for real can you believe that this is what qualified as a super hero movie 15 years ago?";
 		String urlOne = "./black-panther.jpg";
 		String urlTwo = "./fantastic-four.jpg";
 		String urlThree = "./black-cougar.jpg";
