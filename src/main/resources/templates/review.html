@@ -17,7 +17,7 @@
 			<p>Category: <span th:text="${review.category}"/></p>
 			<p th:text="${review.content}"/>
 			<p>Tags: </p>
-			<a class="tag" th:each="tag: ${review.getTags()}" th:href="'/search?tag=' + ${tag}">
+			<a class="tag" th:each="tag: ${review.getTags()}" th:href="@{/search(tag=${tag})}">
 				<span th:text="${tag}"/>
 			</a>
 		</article>
@@ -27,5 +27,3 @@
 	</div>
 </body>
 </html>
-
-<!-- long id, String title, String url, String category, String content, String description, Date date, List<String> tags -->
