@@ -26,10 +26,10 @@ public class ReviewRepository {
 		String titleTwo = "Fantastic Four (2015)";
 		String titleThree = "Black Cougar";
 		populateReviewsMap(
-				new Review(1L, titleOne, urlOne, "movies", contentOne, descriptionOne, "good", "movie", "super hero"),
-				new Review(2L, titleTwo, urlTwo, "movies", contentTwo, descriptionTwo, "bad", "movie", "super hero"),
+				new Review(1L, titleOne, urlOne, "movies", contentOne, descriptionOne, "good", "movie", "super hero", "2018"),
+				new Review(2L, titleTwo, urlTwo, "movies", contentTwo, descriptionTwo, "bad", "movie", "super hero", "2015"),
 				new Review(3L, titleThree, urlThree, "movies", contentThree, descriptionThree, "good",
-						"better than fantastic four", "movie"));
+						"better than fantastic four", "movie", "old", "super hero", "2002"));
 	}
 
 	public ReviewRepository(Review... reviews) {
