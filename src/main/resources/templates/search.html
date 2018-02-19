@@ -21,7 +21,7 @@
 				</h2>
 				<p th:text="${review.getDescription()}"/>
 				<p>Tags: </p>
-				<a class="tag" th:each="tag: ${review.getTags()}" th:href="'/search?tag=' + ${tag}">
+				<a class="tag" th:each="tag: ${review.getTags()}" th:href="@{/search(tag=${tag})}">
 					<span th:text="${tag}"/>
 				</a>
 			</article>

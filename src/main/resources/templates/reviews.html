@@ -14,7 +14,7 @@
 		</header>
 		<article th:each="review: ${reviews}">
 			<h2>
-				<a th:href="'/review?id=' + ${review.getId()}" th:text="${review.getTitle()}" />
+				<a th:href="@{/review(id=${review.getId()})}" th:text="${review.getTitle()}" />
 			</h2>
 			<p th:text="${review.getDescription()}"/>
 		</article>
