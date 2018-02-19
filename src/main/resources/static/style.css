@@ -1,6 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+* {
+	
+}
+
 .tag {
-	padding:5px;
+	padding:0.3rem;
+	color: black;
+	border-radius: 0.6rem;
+	margin: 2px;
+	background-color: #a7a7a7;
+}
+
+.tag:hover {
 	color:grey;
+	background-color: lightgrey;
 }
 
 footer {
@@ -27,4 +41,16 @@ img.icon {
 
 #main {
 	font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+h1 {
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+h2 {
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
