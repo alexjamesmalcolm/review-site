@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title></title>
-
+	<title>Reviews</title>
+	<link rel="stylesheet" type="text/css" href="/style.css" />
 </head>
 <body>
-	<header>
-		<h1>Reviews</h1>
-	</header>
-	<article th:each="review: ${reviews}">
-		<h2>
-			<a th:href="'/review?id=' + ${review.getId()}" th:text="${review.getTitle()}" />
-		</h2>
-		<p th:text="${review.getDescription()}"/>
-	</article>
+	<div id="main">
+		<header>
+			<h1>Reviews</h1>
+			<nav>
+				<a href="/">Home</a>
+			</nav>
+		</header>
+		<article th:each="review: ${reviews}">
+			<h2>
+				<a th:href="'/review?id=' + ${review.getId()}" th:text="${review.getTitle()}" />
+			</h2>
+			<p th:text="${review.getDescription()}"/>
+		</article>
+		<footer>
+			<a href="https://github.com/alexjamesmalcolm">Visit my github</a>
+		</footer>
+	</div>
 </body>
 </html>
 <!-- long id, String title, String url, String category, String content, String description, Date date, List<String> tags -->

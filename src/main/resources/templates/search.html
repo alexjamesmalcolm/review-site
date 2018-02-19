@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Search results</title>
+	<link rel="stylesheet" type="text/css" href="/style.css" />
+</head>
+<body>
+	<div id="main">
+		<header>
+			<h1>
+				Search results
+			</h1>
+			<nav>
+				<a href="/">Home</a>
+			</nav>
+		</header>
+		<section id="search-results">
+			<article th:each="review: ${reviews}">
+				<h2>
+					<a th:href="'/review?id=' + ${review.getId()}" th:text="${review.getTitle()}" />
+				</h2>
+				<p th:text="${review.getDescription()}"/>
+				<p>Tags: </p>
+				<a class="tag" th:each="tag: ${review.getTags()}" th:href="'/search?tag=' + ${tag}">
+					<span th:text="${tag}"/>
+				</a>
+			</article>
+		</section>
+		<footer>
+			<a href="https://github.com/alexjamesmalcolm">Visit my github</a>
+		</footer>
+	</div>
+</body>
+</html>

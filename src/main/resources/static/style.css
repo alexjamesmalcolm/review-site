@@ -1,0 +1,25 @@
+.tag {
+	padding:5px;
+	color:grey;
+}
+
+footer {
+	padding: 1rem;
+}
+
+header {
+	text-align: center;
+}
+
+nav ul {
+	padding 0px;
+}
+
+img.poster {
+	max-width: 300px;
+	max-height: 300px;
+}
+
+#main {
+	font-family: Arial, Helvetica, sans-serif;
+}
